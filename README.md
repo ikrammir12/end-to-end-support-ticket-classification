@@ -56,3 +56,18 @@ Error analysis revealed that most misclassifications occur between semantically 
 
 Why this Baseline Exists:
 This baseline serves as a reference point for evaluting whether more complex models (e.g, Neural Networks, transformers) can significantly outperform traditional Ml techniques on this task.
+
+
+![alt text](image.png)
+
+The model works well for Billing and Shipping tickets because these issues use clear and specific words.
+Most mistakes happen between Account and Technical Support. This is because many tickets talk about both account and technical problems at the same time, which confuses the model.
+The Other category has lower accuracy because it contains many different types of issues with no clear pattern.
+Overall, the errors are mainly caused by unclear or overlapping labels, not by a weak model.
+
+
+
+![alt text](image-1.png)
+
+
+The confusion matrix shows significant overlap between Account and Technical Support tickets. Many user queries contain mixed intent (e.g., login issues combined with billing concerns), which introduces semantic ambiguity. This limits Macro F1 despite strong per-class performance in Shipping and Billing.
