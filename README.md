@@ -71,3 +71,8 @@ Overall, the errors are mainly caused by unclear or overlapping labels, not by a
 
 
 The confusion matrix shows significant overlap between Account and Technical Support tickets. Many user queries contain mixed intent (e.g., login issues combined with billing concerns), which introduces semantic ambiguity. This limits Macro F1 despite strong per-class performance in Shipping and Billing.
+
+
+![alt text](image-2.png)
+
+The confusion matrix reveals significant class overlap between Account and Technical Support, indicating ambiguous boundaries in issue categorization. Additionally, the Other class shows high misclassification rates due to its broad and undefined nature. In contrast, Billing demonstrates strong separability with minimal confusion, suggesting clear lexical signals. These findings suggest that model performance is primarily limited by class definition ambiguity rather than model capacity.
