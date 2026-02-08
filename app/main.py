@@ -5,14 +5,13 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 app = FastAPI()
 
-# Load model & tokenizer once at startup
-MODEL_PATH = "app/model"
+MODEL_NAME = "Mirikram/bert-ticket-classifier"  
 
-tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
-model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
 model.eval()
 
-labels = ["Billing", "Technical Support", "Account", "Shipping"]  # adjust if needed
+id2label = model.config.id2label
 
 
 class Ticket(BaseModel):
@@ -31,6 +30,6 @@ def predict(ticket: Ticket):
     confidence = probs[0][pred_class].item()
 
     return {
-        "department": labels[pred_class],
+        "department": id2label[pred_class],
         "confidence": round(confidence, 3)
     }
