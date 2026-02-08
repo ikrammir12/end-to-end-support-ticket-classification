@@ -1,4 +1,13 @@
 test.ipynb
-
 venv/
 __pycache__/
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+*.pkl
+*.csv
+*.zip
+model/
+data/
