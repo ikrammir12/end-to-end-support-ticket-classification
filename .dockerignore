@@ -1,0 +1,10 @@
+venv
+__pycache__
+*.pyc
+.git
+.gitignore
+image-*.png
+*.png
+*.jpg
+*.ipynb
+//009
