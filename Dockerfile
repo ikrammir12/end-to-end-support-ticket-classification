@@ -2,11 +2,10 @@ FROM python:3.10
 
 WORKDIR /app
 
-# copy whole app folder
 COPY app /app/app
 
-# install dependencies
-RUN pip install fastapi uvicorn transformers torch
+RUN pip install --no-cache-dir fastapi uvicorn transformers \
+    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
 EXPOSE 8000
 
