@@ -76,3 +76,6 @@ The confusion matrix shows significant overlap between Account and Technical Sup
 ![alt text](image-2.png)
 
 The confusion matrix reveals significant class overlap between Account and Technical Support, indicating ambiguous boundaries in issue categorization. Additionally, the Other class shows high misclassification rates due to its broad and undefined nature. In contrast, Billing demonstrates strong separability with minimal confusion, suggesting clear lexical signals. These findings suggest that model performance is primarily limited by class definition ambiguity rather than model capacity.
+
+
+Support teams often struggle with manually sorting customer requests. This project solves that problem by using a fine-tuned BERT model to automatically classify support tickets into the correct department. The solution is deployed as a FastAPI service and containerized with Docker, showing how AI models can be turned into real-world applications.
